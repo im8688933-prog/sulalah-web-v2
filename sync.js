@@ -572,7 +572,7 @@
     lastRemoteUpdatedAt = '';
     localStorage.removeItem(SESSION_KEY);
     if (pollTimer) clearInterval(pollTimer);
-    app.setCanEdit(app.isForcedReadOnly ? false : true);
+    app.setCanEdit(false);
     setStatus('idle', app.isForcedReadOnly ? 'عرض فقط · أدخل رمز الكمبيوتر' : 'محليًا · سجّل الدخول للمزامنة');
     if (ui.pairPanel) ui.pairPanel.classList.add('hidden');
     closeDialog();
