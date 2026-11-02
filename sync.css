@@ -1,0 +1,49 @@
+/* Secure sync controls */
+.sync-status{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 11px;border:1px solid #dfe7df;border-radius:999px;background:rgba(255,255,255,.78);color:#587166;font-family:var(--font);font-size:11px;white-space:nowrap;transition:background .18s ease,border-color .18s ease}
+.sync-status:hover{background:#fff;border-color:#b9cdbd;box-shadow:0 3px 10px rgba(28,55,46,.06)}
+.sync-status:focus-visible{outline:3px solid rgba(72,125,92,.18);outline-offset:2px}
+.sync-indicator{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:#bd9a68;box-shadow:0 0 0 3px rgba(189,154,104,.13)}
+.sync-status[data-state="online"] .sync-indicator{background:#4c9b70;box-shadow:0 0 0 3px rgba(76,155,112,.13)}
+.sync-status[data-state="offline"] .sync-indicator{background:#c87963;box-shadow:0 0 0 3px rgba(200,121,99,.13)}
+.sync-status[data-state="waiting"] .sync-indicator{background:#6c94a1;box-shadow:0 0 0 3px rgba(108,148,161,.13)}
+.sync-dialog-backdrop{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:18px;background:rgba(17,39,33,.52);backdrop-filter:blur(5px);overflow:auto}
+.sync-dialog-backdrop.hidden{display:none}
+.sync-dialog{width:min(470px,100%);max-height:min(92vh,760px);overflow:auto;padding:23px;border:1px solid rgba(255,255,255,.8);border-radius:21px;background:#fff;box-shadow:0 28px 80px rgba(12,35,28,.25)}
+.sync-dialog-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid #edf1eb}
+.sync-dialog-heading h2{margin:3px 0 0;font-size:21px;color:#203d33}
+.sync-description{margin:14px 0 17px;color:#78877f;font-size:12px;line-height:1.9}
+.sync-field{display:grid;gap:6px;margin:0 0 12px}
+.sync-field>span{font-size:11px;color:#5e7066;font-weight:600}
+.sync-field input{width:100%;min-height:43px;padding:8px 11px;border:1px solid #dfe7df;border-radius:10px;background:#fbfcfa;color:#263e34;font-family:var(--font);font-size:13px;outline:none}
+.sync-field input:focus{border-color:#8eaf99;background:#fff;box-shadow:0 0 0 4px rgba(72,125,92,.1)}
+.sync-form-divider{height:1px;margin:16px 0;background:#edf1eb}
+.sync-dialog-actions{display:flex;align-items:center;gap:9px;margin-top:16px}
+.sync-dialog-actions .btn{min-height:45px}
+.sync-error{margin-top:12px;padding:10px 12px;border:1px solid #f1d8d1;border-radius:10px;background:#fff5f2;color:#994d40;font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.sync-footnote{margin:14px 0 0;color:#98a39c;font-size:10px;line-height:1.8}
+.sync-pair-panel{display:grid;gap:8px;margin-top:16px;padding:15px;border:1px solid #dce8dc;border-radius:14px;background:linear-gradient(145deg,#f7faf6,#eef5ee);color:#304c3d}
+.sync-pair-panel.hidden{display:none}
+.sync-pair-panel strong{font-size:14px}
+.sync-pair-panel p{margin:0;color:#74847a;font-size:11px;line-height:1.8}
+.sync-pair-code{min-height:48px;display:grid;place-items:center;border:1px dashed #a9c3ac;border-radius:11px;background:#fff;color:#1d5849;font-family:ui-monospace,Consolas,monospace;font-size:24px;font-weight:800;letter-spacing:.16em}
+.sync-pair-qr{display:grid;min-height:208px;place-items:center;padding:8px;border:1px solid #e2e9df;border-radius:12px;background:#fff}
+.sync-pair-qr canvas,.sync-pair-qr img{display:block;max-width:100%;height:auto!important}
+.sync-qr-reader{width:100%;max-width:360px;margin:10px auto;overflow:hidden;border-radius:12px;background:#18382f}
+.sync-qr-reader.hidden{display:none}
+.sync-scan-button{width:100%;min-height:46px}
+.sync-scan-hint{margin:0;color:#74847a;font-size:11px;text-align:center}
+.sync-pair-panel small{color:#6e8075;font-size:10px}
+.sync-pair-panel .btn{min-height:42px;margin-top:2px}
+.sync-status{min-height:34px;padding:0 9px;font-size:10px}
+.sync-dialog-backdrop{align-items:end;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+.sync-dialog{width:100%;max-height:calc(94dvh - env(safe-area-inset-top,0px));padding:20px;border-radius:22px 22px 14px 14px}
+.sync-dialog-heading h2{font-size:20px}
+.sync-description{font-size:13px}
+.sync-field>span{font-size:13px}
+.sync-field input{min-height:47px;font-size:14px}
+.sync-dialog-actions .btn{min-height:47px}
+.sync-pair-panel{padding:14px}
+.sync-pair-code{min-height:52px;font-size:25px}
+.sync-status{width:auto;min-width:76px;max-width:104px;justify-content:center;padding:0 8px;font-size:9px}
+.sync-status #sync-label{display:block;max-width:76px;overflow:hidden;text-overflow:ellipsis}
+
