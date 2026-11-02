@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b32">
+  <title>سلالة | مشجرة بني أمغيان</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sync.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">✳</span><span><strong>سلالة</strong><small>مشجرة بني أمغيان</small></span></a>
+      <div class="side-label">مساحة العائلة</div>
+      <nav aria-label="القائمة الرئيسية">
+        <button class="nav-item active" data-tab="home"><span>⌂</span>الرئيسية</button>
+        <button class="nav-item" data-tab="people"><span>♧</span>الأفراد</button>
+        <button class="nav-item" data-tab="tree"><span>⌘</span>المشجرة</button>
+        <button class="nav-item" data-tab="settings"><span>⚙</span>المشاركة والإعدادات</button>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span><div><b id="sync-state">يلزم تسجيل المشرف</b><small>بيانات العائلة متاحة للأجهزة المرتبطة فقط</small></div></div>
+    </aside>
+    <main>
+      <header class="topbar"><div class="crumb">سلالة <span>/</span> <b id="page-name">الرئيسية</b></div><div class="top-actions"><span class="saved-label" id="saved-label">حفظ على هذا الجهاز</span><button class="mobile-menu" id="menu-toggle" aria-label="فتح القائمة">☰</button></div></header>
+      <section class="page active" id="page-home">
+        <div class="hero"><div><div class="eyebrow">حكاية أجيال تحفظها العائلة</div><h1>مشجرة <em>بني أمغيان</em></h1><p>سجلٌ عائلي يجمع الأسماء والروابط، ويقرّب فروع العائلة إلى بعضها.</p><div class="hero-actions"><button class="button primary" data-go="tree">استعرض المشجرة <span>←</span></button><button class="button outline" data-go="people">دليل الأفراد</button></div></div><div class="hero-art" aria-hidden="true"><div class="ring ring-one"></div><div class="ring ring-two"></div><div class="tree-glyph">✳</div><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="leaf leaf-three"></span></div></div>
+        <div class="notice"><span>ⓘ</span><div><b>المشجرة خالية حتى توثّقوا بياناتها</b><p>سجّل الدخول من الكمبيوتر عبر زر المزامنة أعلى الصفحة. يربط المشرف هواتف العائلة برمز مؤقت أحادي الاستخدام.</p></div></div>
+        <div class="stat-grid"><article class="stat-card"><span class="stat-icon">♧</span><small>الأفراد في العرض</small><strong id="total-count">—</strong></article><article class="stat-card"><span class="stat-icon sand">⌘</span><small>الأجيال</small><strong id="generation-count">—</strong></article><article class="stat-card"><span class="stat-icon pale">✧</span><small>الفروع</small><strong id="branch-count">—</strong></article></div>
+        <div class="section-heading"><div><span class="eyebrow">مساحة التصفح</span><h2>ابدأ من هنا</h2></div></div>
+        <div class="quick-grid"><button class="quick-card" data-go="tree"><span class="quick-icon">⌘</span><span><b>تصفّح المشجرة</b><small>تنقّل بين الأجيال والفروع</small></span><span class="arrow">←</span></button><button class="quick-card" data-go="people"><span class="quick-icon sand">⌕</span><span><b>ابحث عن فرد</b><small>ابحث بالاسم أو الفرع</small></span><span class="arrow">←</span></button><button class="quick-card desktop-only" data-action="add"><span class="quick-icon pale">＋</span><span><b>إضافة إلى السجل</b><small>متاح للمشرفين بعد تفعيل الدخول</small></span><span class="arrow">←</span></button></div>
+      </section>
+      <section class="page" id="page-people">
+        <div class="page-heading"><div><span class="eyebrow">دليل العائلة</span><h1>الأفراد</h1><p>استكشف الأسماء والفروع المسجلة في المشجرة.</p></div><button class="button primary desktop-only" data-action="add">＋ إضافة فرد</button></div>
+        <div class="toolbar"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="ابحث عن اسم أو فرع..." autocomplete="off"></label><select id="branch-filter" aria-label="تصفية حسب الفرع"><option value="">كل الفروع</option></select></div>
+        <div class="people-list" id="people-list"></div><div class="empty hidden" id="empty">لا توجد نتائج مطابقة. جرّب بحثاً آخر.</div>
+      </section>
+      <section class="page" id="page-tree">
+        <div class="page-heading"><div><span class="eyebrow">روابط الأجيال</span><h1>المشجرة</h1><p>اختر اسماً للانتقال إلى أصوله، وافتح الفروع للتعرّف على امتدادها.</p></div><div class="tree-tools"><button class="icon-button" id="zoom-out" aria-label="تصغير">−</button><button class="icon-button" id="zoom-in" aria-label="تكبير">＋</button><button class="button outline" id="share-tree">مشاركة العرض</button></div></div>
+        <div class="tree-panel"><div class="tree-toolbar"><div><b>مشجرة بني أمغيان</b><small>اضغط على الفرد لعرض تفاصيله</small></div><button class="text-button" id="reset-tree">عرض الجميع</button></div><div class="tree-viewport" id="tree-viewport"><div class="tree-canvas" id="tree-canvas"></div></div></div>
+        <p class="tree-hint">على الهاتف، اسحب المشجرة أفقيًا أو استخدم أزرار التكبير. تُعرض هنا البيانات المنشورة للعائلة فقط.</p>
+      </section>
+      <section class="page" id="page-settings">
+        <div class="page-heading"><div><span class="eyebrow">إدارة الوصول</span><h1>المشاركة والإعدادات</h1><p>جهّز نسخة الهاتف للقراءة العامة مع إبقاء التحرير محصورًا بالمشرفين.</p></div></div>
+        <div class="settings-grid"><article class="settings-card"><span class="quick-icon">↗</span><div><h2>رابط عرض الهاتف</h2><p>ينشئ التطبيق رابطًا يفتح وضع القراءة فقط. مشاركة بيانات حقيقية تحتاج قاعدة بيانات متصلة واستضافة عامة.</p><button class="button primary" id="copy-share">نسخ رابط العرض</button></div></article><article class="settings-card"><span class="quick-icon sand">♙</span><div><h2>إدارة المشجرة</h2><p>إضافة الأسماء وتعديلها متاحة للمشرفين بعد تفعيل تسجيل الدخول وربط Supabase. لا نعرض الملاحظات الخاصة للزوار.</p><button class="button outline" id="open-admin">دخول المشرف</button></div></article><article class="settings-card"><span class="quick-icon pale">⇄</span><div><h2>نسخة احتياطية</h2><p>احتفظ بنسخة محلية من سجل العرض أو استورد ملفًا سابقًا.</p><div class="inline-actions"><button class="button outline" id="export-data">تصدير JSON</button><label class="button outline file-button">استيراد JSON<input id="import-data" type="file" accept="application/json,.json" hidden></label></div></div></article></div>
+        <div class="privacy-callout"><b>الخصوصية أولًا</b><p>قبل نشر المشجرة، حدّد ما توافق العائلة على إظهاره. أخفِ تاريخ الميلاد التفصيلي ومعلومات الاتصال والملاحظات الخاصة، ولا تنشر بيانات شخص حيّ دون موافقته.</p></div>
+      </section>
+      <footer class="footer">سلالة <span>•</span> حفظ الروابط التي تجمعنا</footer>
+    </main>
+  </div>
+  <dialog id="person-dialog"><form id="person-form" method="dialog"><div class="dialog-head"><div><span class="eyebrow">سجل العائلة</span><h2 id="dialog-title">إضافة فرد</h2></div><button class="icon-button" value="cancel" aria-label="إغلاق">×</button></div><input id="person-id" type="hidden"><label>الاسم الكامل<input id="person-name" required maxlength="120" placeholder="الاسم كما ترغب العائلة في توثيقه"></label><div class="form-row"><label>الفرع<input id="person-branch" maxlength="80"></label><label>الجنس<select id="person-gender"><option>ذكر</option><option>أنثى</option><option>غير محدد</option></select></label></div><div class="form-row"><label>الأب<select id="person-father"><option value="">غير محدد</option></select></label><label>الأم<select id="person-mother"><option value="">غير محدد</option></select></label></div><div class="form-row"><label>سنة الميلاد<input id="person-birth" placeholder="اختياري"></label><label>الحالة<select id="person-published"><option value="true">منشور للعائلة</option><option value="false">خاص بالمشرفين</option></select></label></div><label>ملاحظات المشرف<input id="person-notes" maxlength="300" placeholder="لا تظهر للزوار"></label><div class="dialog-actions"><button class="button primary" id="save-person" value="default">حفظ</button><button class="button outline" id="delete-person" type="button">حذف</button></div><p class="form-help">هذا النموذج يعمل محليًا في النموذج الأولي فقط. لا تحفظ بيانات حقيقية قبل ربط قاعدة البيانات.</p></form></dialog>
+  <dialog id="detail-dialog"><div class="dialog-head"><div><span class="eyebrow">من سجل العائلة</span><h2 id="detail-name"></h2></div><button class="icon-button" id="close-detail" aria-label="إغلاق">×</button></div><div id="detail-body"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>window.SULALAH_FORCE_READ_ONLY = matchMedia('(max-width: 680px)').matches || new URLSearchParams(location.search).get('view') === 'share';</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" defer></script>
+  <script src="app.js"></script>
+  <script src="sync.js"></script>
+</body>
+</html>
+
